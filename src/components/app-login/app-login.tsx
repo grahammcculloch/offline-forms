@@ -97,6 +97,7 @@ export class AppLogin {
               src="/assets/icon/icon512.png"
               width="156"
               height="156"
+              alt="App logo"
             />
             <h1>Offline Forms</h1>
           </ion-col>
