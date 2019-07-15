@@ -1,0 +1,20 @@
+.login-wrapper {
+  --padding-top: var(--ds-space, 10px);
+  --padding-bottom: var(--ds-space, 10px);
+  --padding-start: var(--ds-space, 10px);
+  --padding-end: var(--ds-space, 10px);
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 20px 0;
+}
+.login-item {
+  --padding-start: 0;
+}
+.login-button {
+  padding-top: var(--ds-space);
+}

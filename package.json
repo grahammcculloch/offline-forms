@@ -1,0 +1,25 @@
+{
+  "name": "offline-forms",
+  "private": false,
+  "version": "0.0.1",
+  "description": "An Ionic PWA demonstrating form.io forms",
+  "license": "MIT",
+  "scripts": {
+    "build": "stencil build",
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watch",
+    "deploy": "firebase deploy"
+  },
+  "dependencies": {
+    "@ionic/core": "one",
+    "formiojs": "^3.23.0",
+    "lodash-es": "^4.17.11",
+    "mobx": "^5.10.1",
+    "mobx-persist": "^0.4.1"
+  },
+  "devDependencies": {
+    "@stencil/core": "1.0.0-beta.8",
+    "workbox-build": "4.3.1"
+  }
+}
