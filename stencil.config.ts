@@ -12,8 +12,5 @@ export const config: Config = {
     }
   }],
   globalScript: 'src/global/app.ts',
-  globalStyle: 'src/global/app.css',
-  copy: [
-    { src: 'robots.txt' }
-  ]
+  globalStyle: 'src/global/app.css'
 };
