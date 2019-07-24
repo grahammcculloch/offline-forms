@@ -1,10 +1,44 @@
-import { Component, h } from '@stencil/core';
+import { Component, h, Listen } from "@stencil/core";
+import { presentToast } from "../../helpers/toast";
 
 @Component({
-  tag: 'app-root',
-  styleUrl: 'app-root.css'
+  tag: "app-root",
+  styleUrl: "app-root.css"
 })
 export class AppRoot {
+
+  componentWillLoad() {
+    const channel = new BroadcastChannel('app-channel');
+    channel.onmessage = event => {
+      presentToast(event.data.message, { color: event.data.color });
+    };
+  }
+
+  @Listen("swUpdate", { target: 'window' })
+  async onSWUpdate() {
+    const registration = await navigator.serviceWorker.getRegistration();
+
+    if (!registration || !registration.waiting) {
+      // If there is no registration, this is the first service
+      // worker to be installed. registration.waiting is the one
+      // waiting to be activiated.
+      return;
+    }
+
+    const toastCtrl = document.querySelector("ion-toast-controller");
+    const toast = await toastCtrl.create({
+      message: 'New version available',
+      color: 'dark',
+      showCloseButton: true,
+      closeButtonText: 'Reload'
+    });
+
+    await toast.present();
+    await toast.onWillDismiss();
+
+    registration.waiting.postMessage("skipWaiting");
+    window.location.reload();
+  }
 
   render() {
     return (

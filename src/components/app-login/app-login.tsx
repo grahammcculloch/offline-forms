@@ -103,7 +103,7 @@ export class AppLogin {
           </ion-col>
         </ion-row>
         <ion-item class="login-item">
-          <ion-label position="stacked" >Email</ion-label>
+          <ion-label position="stacked">Email</ion-label>
           <ion-input
             type="email"
             inputMode="email"

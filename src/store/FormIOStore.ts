@@ -99,7 +99,15 @@ class FormIOStore {
           }).then(response => {
             form.emit("submitDone", submission);
             console.log(response.json());
+          }).catch(err => {
+            console.log('Inner catch', err);
+            form.setAlert('danger', 'Failed to submit form');
           });
+        });
+
+        form.on("error", err => {
+          console.log('on error', err);
+          form.setAlert('danger', 'Failed to submit form');
         });
       })
       .catch(err => {

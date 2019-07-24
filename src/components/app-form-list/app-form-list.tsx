@@ -24,6 +24,12 @@ export class AppFormList {
     } else {
       this.router.push('/', 'root');
     }
+    if ('Notification' in window && 'serviceWorker' in navigator) {
+      Notification.requestPermission(status => {
+        // status will either be 'default', 'granted' or 'denied'
+        console.log(`Notification permissions have been ${status}`);
+      });
+    }
   }
 
   logout = () => {
