@@ -1,6 +1,5 @@
 import { Component, h, State } from "@stencil/core";
 import { autorun } from "mobx";
-import isEmpty from 'lodash-es/isEmpty';
 import store from "../../store";
 
 @Component({
@@ -19,8 +18,8 @@ export class AppFormList {
   }
 
   async componentWillLoad() {
-    if (!isEmpty(store.formio.user) && store.formio.jwtToken) {
-    await store.formio.getForms();
+    if (store.auth.isLoggedIn) {
+      await store.formio.getForms();
     } else {
       this.router.push('/', 'root');
     }
@@ -33,7 +32,7 @@ export class AppFormList {
   }
 
   logout = () => {
-    store.formio.logout();
+    store.auth.logout();
     this.router.push('/', 'root');
   }
 
@@ -41,12 +40,15 @@ export class AppFormList {
     return [
       <ion-header>
         <ion-toolbar color="primary">
-          <ion-buttons slot="end">
+          <ion-buttons slot="start">
             <ion-button onClick={this.logout}>
-              Log out
+              <i slot="icon-only" class="header-icon icon ion-md-log-out"></i>
             </ion-button>
           </ion-buttons>
           <ion-title>Forms</ion-title>
+          <ion-buttons slot="end">
+            <submissions-button />
+          </ion-buttons>
         </ion-toolbar>
       </ion-header>,
 

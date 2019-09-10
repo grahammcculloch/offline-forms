@@ -11,10 +11,13 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 export namespace Components {
   interface AppForm {
     'formName': string;
+    'submittedAt': string;
   }
   interface AppFormList {}
   interface AppLogin {}
   interface AppRoot {}
+  interface AppSubmissions {}
+  interface SubmissionsButton {}
 }
 
 declare global {
@@ -43,27 +46,46 @@ declare global {
     prototype: HTMLAppRootElement;
     new (): HTMLAppRootElement;
   };
+
+  interface HTMLAppSubmissionsElement extends Components.AppSubmissions, HTMLStencilElement {}
+  var HTMLAppSubmissionsElement: {
+    prototype: HTMLAppSubmissionsElement;
+    new (): HTMLAppSubmissionsElement;
+  };
+
+  interface HTMLSubmissionsButtonElement extends Components.SubmissionsButton, HTMLStencilElement {}
+  var HTMLSubmissionsButtonElement: {
+    prototype: HTMLSubmissionsButtonElement;
+    new (): HTMLSubmissionsButtonElement;
+  };
   interface HTMLElementTagNameMap {
     'app-form': HTMLAppFormElement;
     'app-form-list': HTMLAppFormListElement;
     'app-login': HTMLAppLoginElement;
     'app-root': HTMLAppRootElement;
+    'app-submissions': HTMLAppSubmissionsElement;
+    'submissions-button': HTMLSubmissionsButtonElement;
   }
 }
 
 declare namespace LocalJSX {
   interface AppForm extends JSXBase.HTMLAttributes<HTMLAppFormElement> {
     'formName'?: string;
+    'submittedAt'?: string;
   }
   interface AppFormList extends JSXBase.HTMLAttributes<HTMLAppFormListElement> {}
   interface AppLogin extends JSXBase.HTMLAttributes<HTMLAppLoginElement> {}
   interface AppRoot extends JSXBase.HTMLAttributes<HTMLAppRootElement> {}
+  interface AppSubmissions extends JSXBase.HTMLAttributes<HTMLAppSubmissionsElement> {}
+  interface SubmissionsButton extends JSXBase.HTMLAttributes<HTMLSubmissionsButtonElement> {}
 
   interface IntrinsicElements {
     'app-form': AppForm;
     'app-form-list': AppFormList;
     'app-login': AppLogin;
     'app-root': AppRoot;
+    'app-submissions': AppSubmissions;
+    'submissions-button': SubmissionsButton;
   }
 }
 

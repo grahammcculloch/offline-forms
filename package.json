@@ -12,14 +12,16 @@
     "deploy": "firebase deploy"
   },
   "dependencies": {
-    "@ionic/core": "one",
+    "@ionic/core": "^4.7.1",
+    "date-fns": "^1.30.1",
     "formiojs": "^3.23.0",
     "lodash-es": "^4.17.11",
     "mobx": "^5.10.1",
     "mobx-persist": "^0.4.1"
   },
   "devDependencies": {
-    "@stencil/core": "1.0.0-beta.8",
+    "@stencil/core": "^1.2.1",
+    "@stencil/router": "^1.0.1",
     "workbox-build": "4.3.1",
     "workbox-webpack-plugin": "^4.3.1"
   }

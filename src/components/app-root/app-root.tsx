@@ -47,8 +47,10 @@ export class AppRoot {
         <ion-toast-controller />
         <ion-router useHash={false}>
           <ion-route url="/" component="app-login" />
+          <ion-route url="/submissions" component="app-submissions" />
           <ion-route url="/forms" component="app-form-list" />
           <ion-route url="/forms/:formName" component="app-form" />
+          <ion-route url="/forms/:formName/:submittedAt" component="app-form" />
         </ion-router>
         <ion-nav />
       </ion-app>

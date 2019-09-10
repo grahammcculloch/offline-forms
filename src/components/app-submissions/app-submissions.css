@@ -1,0 +1,20 @@
+.empty-wrapper {
+  padding: var(--ds-space);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.submission {
+  padding: 5px 0;
+}
+
+.submission--date {
+  font-size: 70%;
+  color: #888;
+}
+
+.submission--name {
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}

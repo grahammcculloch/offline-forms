@@ -34,3 +34,7 @@
 body {
   --ds-space: 16px;
 }
+
+.header-icon {
+  font-size: 24px;
+}

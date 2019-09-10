@@ -6,9 +6,6 @@ export const config: Config = {
   outputTargets: [{
     type: 'www',
     serviceWorker: {
-      globPatterns: [
-        '**/*.{js,css,json,html,ico,png}'
-      ],
       swSrc: 'src/sw.js'
     }
   }],

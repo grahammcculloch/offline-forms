@@ -20,7 +20,7 @@ export class AppLogin {
   private router: HTMLIonRouterElement = document.querySelector("ion-router");
 
   componentWillLoad() {
-    if (store.formio.isLoggedIn) {
+    if (store.auth.isLoggedIn) {
       this.submitting = true;
       this.router.push("/forms");
     }
@@ -62,7 +62,7 @@ export class AppLogin {
 
     this.submitting = true;
     if (!this.password.error && !this.email.error) {
-      store.formio
+      store.auth
         .login(this.email.value, this.password.value)
         .then(() => {
           this.router.push("/forms").then(() => {

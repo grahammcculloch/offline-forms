@@ -1,0 +1,28 @@
+.wrapper {
+  position: relative;
+}
+
+.spinner-overlay,
+.icon-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-overlay {
+  color: var(--ion-color-primary, #3880ff);
+}
+
+.spinner-value {
+  font-size: 60%;
+  line-height: 1;
+}
+
+.overlayed-icon {
+  font-size: 12px;
+}

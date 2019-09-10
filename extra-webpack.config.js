@@ -7,7 +7,7 @@ module.exports = {
     new WorkboxPlugin.InjectManifest({
       swSrc: './src/sw.js',
       globPatterns: [
-        '**/*.{js,css,json,html,ico,png}'
+        '**/*.{js,css,json,html,ico,png,svg}'
       ]
     })
   ],
