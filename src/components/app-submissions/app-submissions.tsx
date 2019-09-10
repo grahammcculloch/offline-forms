@@ -53,11 +53,7 @@ export class AppSubmissions {
             {this.submissions.map(submission => (
               <ion-item-sliding>
                 <ion-item
-                  href={
-                    submission.state === SubmissionState.Pending
-                      ? `/forms/${submission.formName}/${submission.submittedAt}`
-                      : undefined
-                  }
+                  href={`/forms/${submission.formName}/${submission.submittedAt}`}
                 >
                   <div class="submission">
                     <div class="submission--name">{submission.formTitle}</div>
@@ -69,7 +65,9 @@ export class AppSubmissions {
                 <ion-item-options side="end">
                   <ion-item-option
                     color="danger"
-                    onClick={() => { this.deleteSubmission(submission); }}
+                    onClick={() => {
+                      this.deleteSubmission(submission);
+                    }}
                   >
                     <ion-icon name="trash" size="large"></ion-icon>
                   </ion-item-option>
