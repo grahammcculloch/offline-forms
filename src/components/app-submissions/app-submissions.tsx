@@ -69,7 +69,7 @@ export class AppSubmissions {
                       this.deleteSubmission(submission);
                     }}
                   >
-                    <ion-icon name="trash" size="large"></ion-icon>
+                    <ion-icon class="action-icon" name="trash"></ion-icon>
                   </ion-item-option>
                 </ion-item-options>
               </ion-item-sliding>
