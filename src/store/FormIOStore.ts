@@ -81,6 +81,12 @@ class FormIOStore {
       this.setOnline(true);
       this.processQueue();
     });
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') {
+        this.processQueue();
+      }
+    });
+
     window.addEventListener("offline", () => this.setOnline(false));
   }
 
