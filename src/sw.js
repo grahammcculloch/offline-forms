@@ -21,6 +21,35 @@ workbox.routing.registerNavigationRoute(
   }
 );
 
+const networkFirst = new workbox.strategies.NetworkFirst();
+
+const cacheFirst = new workbox.strategies.CacheFirst({
+  cacheName: 'font-awesome',
+  plugins: [
+    new workbox.expiration.Plugin({
+      maxEntries: 100,
+    }),
+    new workbox.cacheableResponse.Plugin({
+      statuses: [0, 200]
+    }),
+  ],
+});
+
+workbox.routing.registerRoute(
+  new RegExp('.*fontawesome-webfont.*'),
+  networkFirst,
+);
+
+workbox.routing.registerRoute(
+  new RegExp('.*build\/svg\/.*'),
+  networkFirst,
+);
+
+workbox.routing.registerRoute(
+  new RegExp('^https:\/\/maxcdn\.bootstrapcdn\.com\/bootstrap'),
+  networkFirst,
+);
+
 // const channel = new BroadcastChannel("app-channel");
 
 // const bgSyncPlugin = new workbox.backgroundSync.Plugin("form-submissions", {

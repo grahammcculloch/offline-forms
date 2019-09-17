@@ -6,8 +6,6 @@
   global font family css then you can comment out the typography.css import.
 */
 
-@import "~formiojs/dist/formio.full.min.css";
-
 /** Core CSS required for ionic components to work property */
 @import "~@ionic/core/css/core.css";
 
